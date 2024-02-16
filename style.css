@@ -47,17 +47,19 @@ header {
 }
 
 nav {
+  width: 100%;
   /* border: 1px solid black; */
 }
 
 nav ul {
-  flex-grow: 1;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: medium;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 1em;
+  justify-content: start;
+  gap: 1.5em;
   list-style-type: none;
   margin: 0;
   /* border: 1px solid black; */
@@ -75,7 +77,13 @@ nav ul a {
   color: black;
 }
 
-nav li {
+nav li:nth-child(5) {
+  display: block;
+  position: relative;
+  width: 78.5%;
+  padding: 16px;
+  background-color: #e1e1e1;
+  border-radius: 2.5em;
   /* border: 1px solid black; */
 }
 
@@ -89,20 +97,69 @@ nav ul li input {
   background-color: #e1e1e1;
   font-size: medium;
   border: none;
-  padding: 16px;
-  height: 14px;
   width: 100%;
-  max-width: 100%;
-  border-radius: 2.5em;
+  height: 14px;
+}
+
+.dropdown-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  margin-top: 1.5em;
+  background-color: white;
+  border-radius: 0.5em;
   /* border: 1px solid black; */
+  width: 98.5%;
+}
+
+.dropdown-menu .search-card-title {
+  margin: 0;
+  padding: 1.5em;
+}
+
+.search-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0;
+  padding: 0 1.5em;
+}
+
+.search-card {
+  display: flex;
+  background-color: rgb(243, 240, 240);
+  border-radius: 1em;
+  overflow: clip;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-card img {
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  width: 10em;
+  height: auto;
+}
+
+.search-card-text {
+  padding: 1em;
+}
+
+nav ul li:focus-within {
+  outline: 0.25em solid #7fc1ff;
+}
+
+nav ul li input:focus + .dropdown-menu {
+  display: flex;
 }
 
 nav ul li input:focus {
-  outline: 0.25em solid rgb(82, 190, 226);
+  outline: none;
 }
 
 .container {
-  columns: 6;
+  columns: 10;
   gap: 1em;
   max-width: 99%;
   margin: 0 auto;
